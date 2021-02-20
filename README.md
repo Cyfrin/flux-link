@@ -38,7 +38,7 @@ Optional:
 - `ADMIN_ADDRESS`: The wallet associated with your node, and where you will be withdrawing to. 
 - `RDD`: You reference data directory of mainnet contracts.
 
-If you're unfamiliar with setting environment variables, feel free to follow the same in the `.env` file. 
+If you're unfamiliar with setting environment variables, feel free to follow the sample in the provided `.env` file. 
 
 
 ## Useage
