@@ -73,7 +73,7 @@ def withdraw_link(flux_contract, w3, node_address, recipent_address, private_key
     tx_hash = w3.eth.sendRawTransaction(signed_txn.rawTransaction)
     log.info("Withdrawing LINK with tx hash: {}".format(tx_hash.hex()))
     # adding just to not have to deal with nonce stuff
-    time.sleep(10)
+    time.sleep(30)
     return tx_hash.hex()
 
 
