@@ -717,6 +717,16 @@ AccessControlledAggregator = [
     },
 ]
 
+AccessControlledOffChainAggregator = [
+    {
+        "inputs": [{"internalType": "address", "name": "_transmitter", "type": "address"}],
+        "name": "owedPayment",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+    },
+]
+
 PriceFeedABI = [
     {
         "inputs": [],
