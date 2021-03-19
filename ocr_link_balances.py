@@ -1,7 +1,5 @@
 import click
-from pathlib import Path
 from web3 import Web3
-import web3
 # import asyncio
 import json
 import os
