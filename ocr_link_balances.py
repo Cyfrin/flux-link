@@ -20,7 +20,7 @@ def run(recipent_address, rdd_ocr_file, ocr_address, rpc_url, link, log_level):
     set_log_level(log_level)
     w3 = Web3(Web3.HTTPProvider(rpc_url))
     check_all_ocr_contracts(rdd_ocr_file, ocr_address, w3)
-    get_ocr_node_link(w3, recipent_address, link)
+    get_admin_link(w3, recipent_address, link)
     
 def check_all_ocr_contracts(rdd_ocr_file, ocr_address, w3):
     total = 0
@@ -43,7 +43,7 @@ def check_single_contract(feed_name, feed_address, ocr_address, w3):
         return amount_available
     return 0
 
-def get_ocr_node_link(w3, admin_address, link):
+def get_admin_link(w3, admin_address, link):
     link_contract = w3.eth.contract(address=link, abi=LinkABI)
     link_in_ocr_node = link_contract.functions.balanceOf(admin_address).call() / 1000000000000000000
     log.info("LINK already paid to OCR node: {} LINK".format(link_in_ocr_node))
