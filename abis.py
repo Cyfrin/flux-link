@@ -776,3 +776,23 @@ PriceFeedABI = [
         "type": "function",
     },
 ]
+
+LinkABI = [
+    {
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
+]
