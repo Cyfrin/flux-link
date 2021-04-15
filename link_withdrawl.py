@@ -87,11 +87,12 @@ def get_chainlink_gas_price(w3):
 
 def calculate_link_from_flux_contract(flux_contract, node_address, link_minimum_balance):
     try:
+        pair_description = flux_contract.functions.description().call()
         amount_to_withdraw = flux_contract.functions.withdrawablePayment(
             node_address).call() / 1000000000000000000
         if amount_to_withdraw > link_minimum_balance:
-            log.info("Address {} has {} LINK".format(
-                flux_contract.address, amount_to_withdraw))
+            log.info("{} @ {} has {} LINK".format(
+                pair_description, flux_contract.address, amount_to_withdraw))
             return amount_to_withdraw
     except web3.exceptions.ContractLogicError:
         log.debug("Address {} had a logic error.".format(

@@ -717,6 +717,16 @@ AccessControlledAggregator = [
     },
 ]
 
+AccessControlledOffChainAggregator = [
+    {
+        "inputs": [{"internalType": "address", "name": "_transmitter", "type": "address"}],
+        "name": "owedPayment",
+        "outputs": [{"internalType": "uint256", "name": "", "type": "uint256"}],
+        "stateMutability": "view",
+        "type": "function",
+    },
+]
+
 PriceFeedABI = [
     {
         "inputs": [],
@@ -765,4 +775,24 @@ PriceFeedABI = [
         "stateMutability": "view",
         "type": "function",
     },
+]
+
+LinkABI = [
+    {
+        "inputs": [
+            {
+                "name": "_owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    }
 ]
