@@ -94,7 +94,7 @@ def calculate_link_from_flux_contract(flux_contract, node_address, link_minimum_
             log.info("{} @ {} has {} LINK".format(
                 pair_description, flux_contract.address, amount_to_withdraw))
             return amount_to_withdraw
-    except web3.exceptions.ContractLogicError:
+    except (web3.exceptions.ContractLogicError, web3.exceptions.BadFunctionCallOutput):
         log.debug("Address {} had a logic error.".format(
             flux_contract.address))
         return 0
